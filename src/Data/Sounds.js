@@ -1,0 +1,39 @@
+export const Sounds = [
+    [
+    require("../Sounds/1/1.wav"),
+    require("../Sounds/1/2.wav"),
+    require("../Sounds/1/3.wav"),
+    require("../Sounds/1/4.wav"),
+    require("../Sounds/1/5.wav"),
+    require("../Sounds/1/6.wav"),
+    require("../Sounds/1/7.wav"),
+    require("../Sounds/1/8.wav"),
+    require("../Sounds/1/9.wav"),
+    
+    ]
+    ,
+    {
+        pad1:"",
+        pad2:"",
+        pad3:"",
+        pad4:"",
+        pad5:"",
+        pad6:"",
+        pad7:"",
+        pad8:"",
+        pad9:"",
+    }
+    ,
+    {
+        pad1:"",
+        pad2:"",
+        pad3:"",
+        pad4:"",
+        pad5:"",
+        pad6:"",
+        pad7:"",
+        pad8:"",
+        pad9:"",
+    }
+    ,
+]
