@@ -20,19 +20,50 @@ export default function Home(){
     const btn8 = useRef(null)
     const btn9 = useRef(null)
     const divapp = useRef(null)
+    
+    const [a,setA]=useState(1)
+    
 
-    const bankOne = Sounds[0];
-    console.log(Sounds)
+    let snd1 = new Audio(Sounds[a][0])
+    let snd2 = new Audio(Sounds[a][1])
+    let snd3 = new Audio(Sounds[a][2])
+    let snd4 = new Audio(Sounds[a][3])
+    let snd5 = new Audio(Sounds[a][4])
+    let snd6 = new Audio(Sounds[a][5])
+    let snd7 = new Audio(Sounds[a][6])
+    let snd8 = new Audio(Sounds[a][7])
+    let snd9 = new Audio(Sounds[a][8])
+
+    let soundVar=[snd1,snd2,snd3,snd4,snd5,snd6,snd7,snd8,snd9]
+    console.log(soundVar[0])
+
+    function changeBank(newB){
+        console.log(newB)
+        if(newB==1){
+            setA(0);
+        }
+        else if(newB==2){
+            setA(1)
+        }
+        else{
+            setA(2)
+        }
+    }
+    
 
     const [start,setStart]=useState(true);
 
     function toggleStart(){
+        changeBank(1)
         setStart(prev=>!prev)
     }  
 
 
-
-
+    
+    
+    
+    
+    
     
     
 
@@ -41,8 +72,6 @@ export default function Home(){
     function routeClick(event){
         if(event.key==="q"){ 
             btn1.current.click()
-            playSound(0);
-            
         }
         else if(event.key==="w"){
             btn2.current.click() 
@@ -80,10 +109,8 @@ export default function Home(){
     
     
     function playSound(a){
-        const audio = new Audio(Sounds[0][a])
-        audio.currentTime=0
-        audio.loop = false;
-        audio.play();
+        soundVar[a].currentTime=0
+        soundVar[a].play();
     }
 
     /*
@@ -104,7 +131,7 @@ export default function Home(){
         <DrumSite bgColor={"#ffebf3"}  tabIndex="-1" onKeyDown={event => focusClick(event)}>
         {start ? <StartButton onClick={toggleStart}>START</StartButton> :  
             <DrumMachineWrapper>
-            <ButtonsWrapper tabIndex="-1" ref={divapp} onKeyDown={event => routeClick(event)} >
+            <ButtonsWrapper tabIndex="-1" ref={divapp}  >
                 <Pad borderColor={"#ff0066"} id="1" ref={btn1} onClick={()=>playSound(0)} >Q</Pad>
                 <Pad borderColor={"#ff0066"} id="2" ref={btn2} onClick={()=>playSound(1)}>W</Pad>
                 <Pad borderColor={"#ff0066"} id="3" ref={btn3} onClick={()=>playSound(2)}>E</Pad>
@@ -120,9 +147,9 @@ export default function Home(){
                     <Screen><ScreenText>MPC-22</ScreenText></Screen>
                 </DisplayScreenWrapper>
                 <SoundBanksWrapper>
-                    <SoundBtn>1</SoundBtn>
-                    <SoundBtn>2</SoundBtn>
-                    <SoundBtn>3</SoundBtn>
+                    <SoundBtn onClick={()=>changeBank(1)}>1</SoundBtn>
+                    <SoundBtn onClick={()=>changeBank(2)}>2</SoundBtn>
+                    <SoundBtn onClick={()=>changeBank(3)}>3</SoundBtn>
                 </SoundBanksWrapper>
 
                 <ControlsWrapper></ControlsWrapper>

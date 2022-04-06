@@ -12,17 +12,18 @@ export const Sounds = [
     
     ]
     ,
-    {
-        pad1:"",
-        pad2:"",
-        pad3:"",
-        pad4:"",
-        pad5:"",
-        pad6:"",
-        pad7:"",
-        pad8:"",
-        pad9:"",
-    }
+    [
+        require("../Sounds/2/1.wav"),
+        require("../Sounds/2/2.wav"),
+        require("../Sounds/2/3.wav"),
+        require("../Sounds/2/4.wav"),
+        require("../Sounds/2/5.wav"),
+        require("../Sounds/2/6.wav"),
+        require("../Sounds/2/7.wav"),
+        require("../Sounds/2/8.wav"),
+        require("../Sounds/2/9.wav"),
+        
+    ]
     ,
     {
         pad1:"",
